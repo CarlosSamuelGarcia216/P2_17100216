@@ -1,0 +1,252 @@
+= Resumen de la Unidad 1  
+
+== Modelo de cajas
+El modelo de cajas es una caracteristica importante del lenguaje de hojas  de estilos de CSS esta caracteristica condiciona el diseño de la mayoria de las paginas web.
+
+Las cajas de una página se crean automáticamente. Cada vez que se inserta una etiqueta HTML, se crea una nueva caja rectangular que encierra los contenidos de ese elemento.
+
+El modelo de cajas se mostrara en la siguente imagen:
+
+image::https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/modelo-caja-css-t1.jpg[]
+
+  
+=== Margin
+La propiedad CSS margin establece el margen para los cuatro lados. Esta misma es para evitarnos establecer cada lado por separado.  
+
+=== Border
+Esta propiedad establece el borde en los cuatro lados asi como en el anterior, en este se puede definir su color, grosor  y estilo.  
+
+=== Padding
+La propiedad de padding en CSS define el espacio entre el borde(**Border**) y el contenido.
+
+=== Content
+La propiedad content se emplea para generar nuevo contenido de forma dinámica e insertarlo en la página HTML.
+
+=== Outline
+Se utiliza para establecer de forma  abreviada una o mas propiedades individuales.
+Esta tiene dos aspectos muy importantes.
+1.- Los perfiles no ocupan espacio, mientras que los bordes si.
+2.- Los perfiles pueden tener formas no rectangulares.
+
+== Explicacion de Display y Box-sizing
+
+=== Display
+Cada elemento tiene un valor diplay por defecto dependiendo el tipo de elemnto que se trate.
+
+==== display box
+Estos valores se definen si un elemnto genera cuadros de visualizacion en absoluto y los posiciona de manera vertical.
+
+==== display inline
+Un elemento inline puede contener algo de texto dentro de un párrafo sin interrumpir el flujo del párrafo. El elemento a es el elemento inline más común, ya que se usa para links.
+Tambien cuando se coloca inline, las capas de estilos se colocan en horizontal pero estas no respetan el width ni el heigth.
+
+==== display inline-box
+Con esta propiedad se maneja como una combinacion de las dos anteriores, ya que esta propiedad coloca las capas de estilo en horizontal y esta si respeta el alto y el ancho.
+
+==== display none
+otro valor común de display es none. Algunos elementos especializados como script usan este por defecto. Es comúnmente usado en JavaScript para ocultar o mostrar elementos sin eliminarlos ni recrearlos.
+
+Esto es diferente de visibility. Usar display: none no dejará espacio donde el elemento se encontraba, pero visibility: hidden; dejará un espacio vacío. 
+
+=== Box-sizing
+==== content-box
+es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.
+
+==== border-box
+le dice al navegador que tome en cuenta para cualquier valor que se especifique de borde o de relleno para el ancho o alto de un elemento. Esto quiere decir, que si se define un elemento con un ancho de 100 pixeles. Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de contenido se encogerá para absorber ese ancho extra.
+
+
+== Concepto Flujo Del Documento
+es el modo en el como se van a ir colocando los compponentes de la pagina, a aprtir de como aaparecen en el codigo HTML y los atributos CSS de los elementos.
+
+== Tipos de posicionamiento
+=== Static
+Es el valor predeterminado de cada elemento, esto quiere decir que su posicionamiento sera en ralcion al flujo del documento de html, por lo tanto los atributos top, left, y rigth no se tendran en cuenta.
+
+=== Relative
+El valor relative en el atributo position indica que la capa sí forma parte del flujo normal de elementos de la página, por lo que su posición dependerá del lugar donde esté en el código y el flujo HTML. Además, las capas con posicionamiento relative, admiten los valores top y left para definir la distancia a la que se colocan con respecto al punto donde esté en ese momento el flujo normal del HTML. Como afectan al mencionado flujo del HTML, los elementos colocados después de las capas relative, tendrán en cuenta sus dimensiones para continuar el flujo y saber dónde colocarse. Sin embargo, no se tendrá en cuenta los top y left configurados.
+
+=== Absolute 
+Permite posicionar elementos de manera absoluta de manera definida por top, left, rigth. Las capas o elemntos con valor absoluto quedan aparte del flujo normal del documento html.
+
+=== Fixed
+Con este valor anclamos la capa o elemnto en relacion al cuerpo (pagina), por mas que se desplase la  pagina hacia la izquierda, derecha, arriba o abajo este elemento siempre quedara fijo.
+
+=== Sticky
+Funciona de manera similar al posicionamiento relativo, en cuanto que no elimina ningún elemento del flujo del documento. En otras palabras, un elemento "sticky" no afecta a la posición de sus elementos adyacentes, y no hunde su elemento padre.Dicho de otra manera, el valor sticky es una especie de híbrido entre el posicionamiento relativo (relative) y fijo (fixed).
+
+== Unidades de medida
+== Absolutas
+- mm: milímetros.
+- cm: centímetros.
+- in: pulgada ("inches", en inglés). Una pulgada  equivale a 2.54 centímetros.
+- pt: puntos. Un punto equivale a 1 /72 de pulgada, es decir, unos 0.35 milímetros.
+- pc: picas. Una pica equivale a 12 puntos, o aproximadamente a 4.23 milímetros.
+
+== Relativas
+- px: (píxel) relativa respecto de la resolución de la pantalla del dispositivo en el que se visualiza la página HTML.
+- %:(porcentaje) Su valor está calculado siempre en base a otro elemento. Si lo aplicamos sobre una fuente es relativo al tamaño de la fuente declarada en el contexto, pero si lo aplicamos al width de un elemento entonces es relativo al ancho de su contenedor.
+
+=== Relativas a la tipografia
+- em: unidad relativa al tamaño de texto definido en un determinado contexto. El em es una unidad que proviene del diseño tipográfico y equivale al espacio que ocupa el ancho de una letra M ("m" mayúscula) de un determinado cuerpo y alfabeto. El em hace referencia al tamaño de letra que se está usando.
+Cuando se utiliza la unidad em, es imprescindible conocer el valor de referencia, de lo contrario saber que un texto tiene 1em ó 5em no nos dice realmente el tamaño de la letra.
+
+- ex: unidad relativa a la altura de la letra "x" minúscula de un determinado cuerpo y alfabeto. También es un concepto proveniente del diseño tipográfico.
+
+- rem: funciona igual que el em, con la diferencia que es relativo al valor de la fuente del elemento html, y no tiene en cuenta el valor heredado o del elemento que lo contiene.
+
+== Selectores Basicos
+
+=== Selector de etiqueta
+Selecciona todos los elementos de la página cuya etiqueta HTML coincide con el valor del selectorPara utilizar este selector, solamente es necesario indicar el nombre de una etiqueta HTML (sin los caracteres < y >) correspondiente a los elementos que se quieren seleccionar.
+
+=== Selector de Clase
+Una de las soluciones más sencillas para aplicar estilos a un solo elemento de la página consiste en utilizar el atributo class de HTML sobre ese elemento para indicar directamente la regla CSS que se le debe aplicar.
+
+=== Selector de Id
+El selector de ID permite seleccionar un elemento de la página a través del valor de su atributo id. Este tipo de selectores sólo seleccionan un elemento de la página porque el valor del atributo id no se puede repetir en dos elementos diferentes de una misma página.
+
+== Selector de relacion
+=== (Espacio)
+su sintaxis es de la siguiente manera:  
+
+H1 P{...}  
+
+el cual nos dice que eligira al elemento P que es descendiente del elemento H1 por dar un ejemplo.
+
+=== > Hijo 
+su sintaxis es de la siguiente manera:  
+
+H1>P{...}  
+
+el cual nos dice que eligira al elemento P que sea hijo del elemento H1.
+
+=== + Hermano adyacente
+su sintaxis es de la siguiente manera:  
+
+H1+P{...}  
+
+el cual nos indica que eligira al elemento P que es hermano directo(adyacente) de el elemento H1
+
+=== ~ Hermano 
+su sintaxis es de la siguiente manera:  
+
+H1~P{...}  
+
+el cual nos dice que eligira al elemento P que sea hijo del mismo padre del elemnto H1
+
+== Pseudo Selectores
+=== Pseudo Clases
+es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado.
+
+. Cuatro ejemplos de pseudo clases:
+- :hover  
+  * aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.  
+
+`` 
+div:hover {    
+    background-color: #F89B4D;
+}
+``  
+
+- :active 
+  *   representa un elemento (como un botón) que el usuario está activando.  Cuando se usa un mouse, la "activación" generalmente comienza cuando el usuario presiona el botón primario del mouse y termina cuando se suelta. 
+
+`` 
+a:active {
+  color: red;
+}
+``  
+
+- :cheked 
+  * representa cualquier radio (<input type="radio">), checkbox (<input type="checkbox">) en estado on 
+
+`` 
+radio:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+}
+``
+
+- :focus 
+  * representa un elemento (como una entrada de formulario) que ha recibido el foco. Generalmente se activa cuando el usuario hace clic, toca un elemento o lo selecciona con la tecla "Tab" del teclado. 
+
+``
+
+input:focus {
+  color: red;
+}
+``
+
+
+. PseudoElemnto con 4 Ejemplos
+
+Estos se utilizan para añadir contenido antes o despues del contenido original de un elemento.
+
+- :first-line
+  * Permite selecionar la primera linea de texto de un elemento. 
+
+`` 
+
+
+div:first-line { color: red; }
+
+``
+- :first-letter
+  * permite seleccionar la primera letra de la primer linea de texto 
+
+`` 
+
+
+p:first-letter { text-transform: uppercase; }
+``
+
+- :before y :after
+  * estos se utilizanen combinacion con la propiedad content de css para añadir contenidos antes o despues del contenido original de un elemnto 
+
+`` 
+
+
+h1:before { content: "Capítulo - "; }
+p:after   { content: "."; }
+``
+
+== Descripcion de la casacada.
+
+- Las propiedades de estilo pueden estar escritas en varios sitios (en varios lugares de la página web o de la hoja de estilo) y dependiendo del sitio, afectan a más o menos elementos.
+
+- Cuando un elemento está contenido en otro (por ejemplo, un párrafo <p> dentro de una división <div>), al elemento de dentro se le aplican también las propiedades definidas para el elemento de fuera (al párrafo <p> se le aplicarían las propiedades definidas para la división <div>).
+
+
+- Dos reglas distintas pueden ser de aplicación a un mismo elemento (por ejemplo, a un párrafo <p> con clase nombre, le es de aplicación tanto el selector .nombre como el selector p).
+
+===== Niveles de la cascda.
+
+Importancia
+
+El primer nivel de Cascade analiza el tipo de regla que estamos viendo.
+
+Hay cuatro tipos básicos de reglas
+
+transición
+    Las reglas que se aplican a una transición activa tienen la mayor importancia.
+
+important
+    Cuando agregamos! Importante al final de nuestra declaración, salta a este nivel de la Cascada. Idealmente, reserva este nivel para Hail Marys, que son necesarios para anular estilos de bibliotecas de terceros.
+
+animación
+    Las reglas que se aplican a una animación activa saltan un nivel en la Cascada
+
+    
+
+
+normal
+este nivel es donde vive a mayor parte de las reglas.
+
+
+=== Especifidad.
+
+Es la manera een la cual los navegadores deciden que valores de uan propiedad de css es mas relevante para un elemento y seran aplicados.
+
+=== Como se calcula la especifidad.
+La especificidad es un peso importancia o valor que se le asigna a una declaración CSS dada, determinada por el número correspondiente de cada tipo de selector. Cuando varias declaraciones tienen igual especificidad, se aplicará al elemento la última declaración encontrada en el CSS. La especificidad solo se aplica cuando el mismo elemento es objetivo de múltiples declaraciones. Según las reglas de CSS, en caso de que un elemento sea objeto de una declaración directa, esta siempre tendrá preferencia sobre las reglas heredadas de su ancestro
